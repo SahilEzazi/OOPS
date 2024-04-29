@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>OBJECT ORIENTED PROGRAMMING SYSTEM</h1>
+    
+
+
+
+
+    <script>
+        console.log("working")
+
+        // class Animal{
+        //     constructor(name,age,price,sound){
+        //         this.myname = name;
+        //         this.myage = age;
+        //         this.myprice = price;
+        //         this.mysound = sound;
+        //         // this.sound=function(){
+        //         //     console.log("meowwww");
+        //         // }
+        //         this.show=function(){
+        //             console.log("Name is " + this.myname + " Age is " + this.myage + " Price is " + this.myprice + " the sound is " + this.mysound)
+        //         }
+        //     }
+        // }    
+        // const cat = new Animal("persian",2,15000,"meoww");
+        // console.log(cat)
+        // console.log(cat.sound())
+        // cat.show();
+        // cat.sound()
+
+        // const dog = new Animal("lebra",5,8000,"bark")
+        // dog.show()
+
+
+        class Employee{
+            constructor(name,id,salary,dept){
+                this.myName = name;
+                this.myId = id;
+                this.mySalary = salary;
+                this.myDept = dept;
+                this.detail=function(){
+                    console.log(`My name is ${this.myName} and my Id is ${this.myId} and Salary is ${this.mySalary} and Department is ${this.myDept}`)
+                }
+             }
+        }
+        const em1 = new Employee("Sahil", 4551, 12000, "Web development")
+        const em2 = new Employee("Arshad", 4551, 12000, "Web development")
+        const em3 = new Employee("Abhiraj", 4551, 12000, "Web development")
+        const em4 = new Employee("Asjad", 4551, 12000, "Web development")
+        const em5 = new Employee("Uvais", 4551, 12000, "Web development")
+        em1.detail()
+        em2.detail()
+        em3.detail()
+        em4.detail()
+        em5.detail()
+
+    </script>
+</body>
+</html>

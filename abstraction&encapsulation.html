@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>ABSTRACTION AND ENCAPSULATION</h1>
+    
+    
+    <script>
+        console.log("working");
+
+        // class Car{
+        //     constructor(name,mode,price){
+        //         this.name = name;
+        //         this.model = mode; 
+        //         this.price = price;
+        //         let discount = 5000;
+        //         let total = function(){
+        //             let final = price - discount;
+        //             console.log("Total amount after discount "+ final);
+        //         }
+        //         this.detail = function(){
+        //             console.log("name "+this.name + " model "+ this.model + " Price "+ this.price);
+        //             total();
+        //         }
+        //     }
+        // }
+
+        // const  myCar = new Car('Toyota','innova',200000);
+        // myCar.detail()
+        // console.log(myCar.discount)
+        // myCar.discount = 7000;
+        // myCar.detail()
+
+
+        // class BankAccount{
+        //     accountNumber;
+        //     accountHolderName;
+        //     #balance = 0;
+        //     constructor(accountNumber, accountHolderName , balance = 0){
+        //         this.accountNumber = accountNumber;
+        //         this.accountHolderName = accountHolderName;
+        //         this.#balance = balance ;
+        //     }
+        //     showDetails(){
+        //         console.log("account number "+this.accountNumber);
+        //         console.log("account name "+this.accountHolderName);
+        //         console.log("balance "+this.#balance);
+        //     }
+        //     deposit(amount){
+        //         if(isNaN(amount)){
+        //             throw new error("value must be a number");
+        //         }
+        //         else{
+        //             this.#balance+=amount;
+        //             this.showDetails();
+        //         }
+        //     }
+        //     withdrawal(amount){
+        //       if(this.#balance >= amount)
+        //       {
+        //         this.#balance -= amount;
+        //         this.showDetails();
+        //       }
+        //       else{
+        //         console.log("insufficient balance")
+        //       }
+        //     }
+        //     set balance(amount){
+        //         if(isNaN(amount)){
+        //             throw new error("value must be a number");
+        //         }
+        //         else{
+        //             this.#balance+=amount;
+        //         }
+        //     }
+        //     get balance(){
+        //         return this.#balance;
+        //     }
+        // }
+        // const acc1 = new BankAccount(5019002544,"Sahil",14);
+        // acc1.showDetails();
+        // acc1.balance = 3000
+        // console.log(acc1.balance)
+        // acc1.deposit("sahil");
+        // acc1.withdrawal(1000)
+        // acc1.showDetails();
+        // acc1.balance = 8000;
+        // acc1.showDetails();
+        // acc1.deposit(5000)
+        // console.log(acc1.balance)
+
+
+        function BankAccount(name,accountNumber,balance=0){
+            let _name = name;
+            let _accountNumber = accountNumber;
+            let _balance = balance;
+            function  showDetails() {
+                console.log("account name "+ _name);
+                console.log("account number "+_accountNumber);
+                console.log("balance "+_balance);
+            }
+            function deposit(amount){
+                _balance += amount;
+                showDetails();
+            }
+            function withdrawal(amount){
+                if(_balance >= amount){
+                    _balance -= amount;
+                    showDetails();
+                }  
+                else
+                {
+                    console.log("insufficient balance");
+                } 
+            }
+            return{
+                showDetails:showDetails,
+                deposit : deposit,
+                withdrawal : withdrawal
+            }
+        }
+
+        const acc2 = BankAccount("sahil",3928752389,2000);
+        acc2.showDetails();
+        // acc2.deposit(2000)
+        // acc2.withdrawal(400)
+        console.log(acc2._balance)
+
+
+</script>
+</body>
+</html>

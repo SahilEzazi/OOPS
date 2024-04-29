@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>inheritance</h1>
+    <h3 id="msg"></h3>
+    
+
+    <script>
+        console.log("working");
+
+        class Bike{
+            constructor(brand, model){
+                this.brand = brand;
+                this.model = model;
+            }
+            show(){
+                return  `This is a ${this.brand} ${this.model}`;
+            }
+        }
+
+        class CasualBike extends Bike{
+            constructor(brand, model, price){
+                super(brand, model); // calling the parent constructor
+                this.price = price;
+            }
+            detail(){
+                return this.show() + " and it costs $" + this.price + ".";
+            }
+        }
+
+        
+        class SportBike extends Bike{
+            constructor(brand, model, price){
+                super(brand, model); // calling the parent constructor
+                this.price = price;
+            }
+            detail1(){
+                return this.show() + " and it costs $" + this.price + ".";
+            }
+        }
+
+        const ktm = new SportBike('ktm','duke',150000);
+        console.log(ktm.detail1());
+
+        
+        // const splendor = new CasualBike('Hero','splendor',85000);
+        // splendor.show() 
+        // console.log(splendor)
+        // console.log(splendor.show())
+        // console.log(splendor.detail());
+        // document.getElementById("msg").innerHTML = splendor.detail()
+
+        // class CasualBike2 extends CasualBike{
+        //     constructor(brand, model, price,color){
+        //         super(brand, model,price); // calling the parent's
+        //         this.color = color
+        //     }
+        //     extraDetail(){
+        //         return this.detail() + " and color is " + this.color;
+        //     }
+        // }
+
+        // const shine = new CasualBike2('honda','shine',90000,'black');
+        // console.log(shine.extraDetail())
+
+
+        // set (setter)
+        // get (getter)
+
+
+    </script>
+</body>
+</html>
